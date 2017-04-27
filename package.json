@@ -3,7 +3,7 @@
   "version": "4.0.1",
   "description": "Get metadata of a package from the npm registry",
   "license": "MIT",
-  "repository": "sindresorhus/package-json",
+  "repository": "pragyandas/package-json",
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
@@ -30,7 +30,8 @@
     "scoped"
   ],
   "dependencies": {
-    "got": "^6.7.1",
+    "https-proxy-agent": "^1.0.0",
+    "node-fetch": "^1.6.3",
     "registry-auth-token": "^3.0.1",
     "registry-url": "^3.0.3",
     "semver": "^5.1.0"
