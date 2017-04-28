@@ -26,7 +26,7 @@ module.exports = function (name, version) {
 
 	if(proxy){
 		var agent = new Agent(proxy);
-		options.agent = agent;s
+		options.agent = agent;
 	}
 		
 
