@@ -5,6 +5,7 @@ var Agent = require('https-proxy-agent');
 var registryUrl = require('registry-url');
 var registryAuthToken = require('registry-auth-token');
 var semver = require('semver');
+var config = require('rc')('npm');
 
 module.exports = function (name, version) {
 	var scope = name.split('/')[0];
@@ -21,9 +22,11 @@ module.exports = function (name, version) {
 		headers: headers
 	};
 
-	if(process.env.https_proxy){
-		var agent = new Agent(process.env.https_proxy);
-		options.agent = agent;
+	var proxy = process.env.https_proxy || config['https-proxy'] || config.proxy;
+
+	if(proxy){
+		var agent = new Agent(proxy);
+		options.agent = agent;s
 	}
 		
 
